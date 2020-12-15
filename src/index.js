@@ -4,8 +4,8 @@ const connectDb = require("./config/db");
 const typeDefs = require("./types");
 const resolvers = require("./resolvers");
 const models = require("./models");
-const path = require('path')
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+const { createStore } = require('./utils');
+const store = createStore();
 
 const app = express();
 connectDb();
@@ -20,3 +20,5 @@ server.applyMiddleware({ app });
 app.listen({ port: process.env.PORT }, () =>
   console.log(`🚀 Server ready at http://localhost:3000/graphql`)
 )
+console.log('this is logging YES')
+
