@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const nutritionSchema = require('./nutritionInfo');
 
-const productSchema = new Schema({
+const productSchema = Schema({
   name: {
     type: String,
     trim: true
@@ -22,6 +22,6 @@ const productSchema = new Schema({
   }
 });
 
-const Product = mongoose.model("Product", productSchema);
+const Product = mongoose.model("Parsed-Meny", productSchema);
 
 module.exports = { Product };
