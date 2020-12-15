@@ -67,12 +67,12 @@ const client = new MongoClient(uri, { useNewUrlParser: true });
 
 // for (let i = 0; i < 18; i++) {
 //   fs.readFile(`./${i}data.json`, 'utf8', function (err, data) {
-//     const json = JSON.parse(data); // Read the data
-//     // let hits = json.hits.hits; // Get all hits
-//     // hits = JSON.stringify(hits);
-//     // fs.writeFile(`./${i}data.json`, hits, (err) => {
-//     //      console.log(hits.length, 'WORK DAMIT');
-//     // });
+//     let rawData = JSON.parse(data); // Read the data
+//     let parsedData = rawData.map(data=> data._source);
+//     parsedData = JSON.stringify(parsedData);
+//     fs.writeFile(`./${i}data.json`, parsedData, (err)=>{
+//       console.log(parsedData.length, 'it works')
+//     })
 //   });
 // }
 
@@ -82,7 +82,7 @@ async function run() {
        console.log("Connected correctly to server");
        const db = client.db("FoodDatabase");
        // Use the collection "people"
-       const col = db.collection("Meny");
+       const col = db.collection("Parsed-Meny");
        // Construct a document
        for (let idx = 0; idx < 18; idx++) {
         const product = await JSON.parse(fs.readFileSync(`./${idx}data.json`, 'utf-8'));
@@ -100,6 +100,6 @@ async function run() {
   }
 }
 
- run().catch(console.dir);
+run().catch(console.dir);
 
 
