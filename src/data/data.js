@@ -1,5 +1,6 @@
 const fs = require('fs');
 const fetch = require("node-fetch");
+require('dotenv').config({path: '../../.env'})
 
 // const productPages= [
 //   "https://platform-rest-prod.ngdata.no/api/products/1300/7080000886050?page=1&page_size=540&full_response=true&fieldset=maximal&facets=Category%2CAllergen&facet=Categories%3ABakeri&showNotForSale=true",
@@ -62,7 +63,7 @@ const fetch = require("node-fetch");
 //   .catch(err => console.log(err))
 // );
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://fooddata:GGwXJMYVULQui9VY@cyberducksdb.zdljk.mongodb.net/FoodDatabase?retryWrites=true&w=majority";
+const uri =  process.env.DATABASE_URL;
 const client = new MongoClient(uri, { useNewUrlParser: true });
 
 // for (let i = 0; i < 18; i++) {
