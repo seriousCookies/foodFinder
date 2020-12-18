@@ -43,7 +43,7 @@ export const BarcodeScreen = () => {
       );
     case CameraPermissionGranted === true:
       return (
-        <View>
+        <View style={styles.mainContainer}>
           <Text style={styles.infoText}> Start scanning! </Text>
           <BarCodeScanner
             onBarCodeScanned={barCodeScanned}
@@ -85,6 +85,11 @@ export const BarcodeScreen = () => {
   }
 };
 const styles = StyleSheet.create({
+  mainContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: "5%",
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -108,10 +113,12 @@ const styles = StyleSheet.create({
     marginTop: 22,
   },
   modalView: {
-    margin: 40,
+    margin: 0,
     backgroundColor: "white",
     borderRadius: 20,
-    padding: 60,
+    padding: 0,
+    height: "90%",
+    width: "90%",
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -127,6 +134,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 10,
     elevation: 2,
+    position: "absolute",
+    top: "90%",
   },
   textStyle: {
     color: "white",
