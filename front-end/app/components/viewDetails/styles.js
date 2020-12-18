@@ -2,43 +2,44 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: "red",
+    backgroundColor: "rgba(255,255,255,0.2)",
     alignItems: "stretch",
     justifyContent: "center",
     padding: "5%",
-    paddingBottom: "25%",
+    paddingBottom: "30%",
     flex: 1,
     width: "100%",
     borderRadius: 20,
   },
   title: {
     textAlign: "center",
-    color: "blue",
+    color: "#3d3496",
     fontWeight: "bold",
     fontSize: 25,
+    padding: "5%",
   },
   container: {
     flex: 1,
-    backgroundColor: "green",
     alignItems: "stretch",
     justifyContent: "center",
+  },
+  allergenContainer: {
+    flex: 1,
+    alignItems: "flex-start",
   },
   flatlistContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-around",
   },
-  flatlist: {
-    backgroundColor: "pink",
-  },
   nutritionalContent: {
-    backgroundColor: "powderblue",
+    backgroundColor: "#2ba7c7",
     borderRadius: 5,
     padding: 6,
     margin: 3,
   },
   trafficColourRed: {
-    backgroundColor: "#FB6962",
+    backgroundColor: "#d84f34",
     borderRadius: 5,
     padding: 6,
     margin: 3,

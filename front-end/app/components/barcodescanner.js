@@ -45,10 +45,13 @@ export const BarcodeScreen = () => {
       return (
         <View style={styles.mainContainer}>
           <Text style={styles.infoText}> Start scanning! </Text>
-          <BarCodeScanner
-            onBarCodeScanned={barCodeScanned}
-            style={styles.scannerView}
-          ></BarCodeScanner>
+          {modalVisible !== true ? (
+            <BarCodeScanner
+              onBarCodeScanned={barCodeScanned}
+              style={styles.scannerView}
+            ></BarCodeScanner>
+          ) : null}
+
           <View style={styles.centeredView}>
             <Modal
               animationType="slide"
@@ -63,7 +66,7 @@ export const BarcodeScreen = () => {
                   <ViewDetails barcode={{ barcode }} />
 
                   <TouchableHighlight
-                    style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+                    style={{ ...styles.openButton, backgroundColor: "#5f1894" }}
                     onPress={() => {
                       setModalVisible(!modalVisible);
                     }}
@@ -88,7 +91,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: "5%",
+    paddingTop: "10%",
   },
   container: {
     flex: 1,
@@ -113,21 +116,13 @@ const styles = StyleSheet.create({
     marginTop: 22,
   },
   modalView: {
-    margin: 0,
-    backgroundColor: "white",
+    margin: "10%",
+    backgroundColor: " rgba(255, 255, 255, 0.5)",
     borderRadius: 20,
     padding: 0,
     height: "90%",
     width: "90%",
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   openButton: {
     backgroundColor: "#F194FF",

@@ -35,7 +35,7 @@ export const trafficColourLabel = (colour) => {
       return "LAV";
     case "#e5edab":
       return "MED";
-    case "#FB6962":
+    case "#d84f34":
       return "HØY";
 
     default:

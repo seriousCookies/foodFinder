@@ -39,7 +39,7 @@ const ViewDetails = ({ barcode }) => {
             style={styles.flatlist}
             contentContainerStyle={styles.flatlistContainer}
             numColumns={5}
-            renderItem={({ item, data }) => renderItem({ item })}
+            renderItem={({ item }) => renderItem({ item })}
             data={nutritionalContent}
             renderItem={renderNCItem}
             keyExtractor={(item) => item.name}
@@ -47,7 +47,7 @@ const ViewDetails = ({ barcode }) => {
         </View>
         <Text>Ingredients: {ingredients}</Text>
         <Text>Inneholder:</Text>
-        <View style={styles.container}>
+        <View style={styles.allergenContainer}>
           <FlatList
             style={styles.flatlist}
             contentContainerStyle={styles.flatlistContainer}
