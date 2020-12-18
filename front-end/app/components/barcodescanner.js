@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import * as Permissions from "expo-permissions";
 import { BarCodeScanner } from "expo-barcode-scanner";
-import ViewDetails from "./ViewDetails";
+import ViewDetails from "./viewDetails/ViewDetails";
 
 const DEVICE_WIDTH = Dimensions.get("window").width;
 const DEVICE_HEIGHT = Dimensions.get("window").height;
@@ -43,12 +43,15 @@ export const BarcodeScreen = () => {
       );
     case CameraPermissionGranted === true:
       return (
-        <View>
+        <View style={styles.mainContainer}>
           <Text style={styles.infoText}> Start scanning! </Text>
-          <BarCodeScanner
-            onBarCodeScanned={barCodeScanned}
-            style={styles.scannerView}
-          ></BarCodeScanner>
+          {modalVisible !== true ? (
+            <BarCodeScanner
+              onBarCodeScanned={barCodeScanned}
+              style={styles.scannerView}
+            ></BarCodeScanner>
+          ) : null}
+
           <View style={styles.centeredView}>
             <Modal
               animationType="slide"
@@ -63,7 +66,7 @@ export const BarcodeScreen = () => {
                   <ViewDetails barcode={{ barcode }} />
 
                   <TouchableHighlight
-                    style={{ ...styles.openButton, backgroundColor: "#2196F3" }}
+                    style={{ ...styles.openButton, backgroundColor: "#5f1894" }}
                     onPress={() => {
                       setModalVisible(!modalVisible);
                     }}
@@ -85,6 +88,11 @@ export const BarcodeScreen = () => {
   }
 };
 const styles = StyleSheet.create({
+  mainContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingTop: "10%",
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -108,25 +116,21 @@ const styles = StyleSheet.create({
     marginTop: 22,
   },
   modalView: {
-    margin: 20,
-    backgroundColor: "white",
+    margin: "10%",
+    backgroundColor: " rgba(255, 255, 255, 0.5)",
     borderRadius: 20,
-    padding: 35,
+    padding: 0,
+    height: "90%",
+    width: "90%",
     alignItems: "center",
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
   },
   openButton: {
     backgroundColor: "#F194FF",
     borderRadius: 20,
     padding: 10,
     elevation: 2,
+    position: "absolute",
+    top: "90%",
   },
   textStyle: {
     color: "white",
