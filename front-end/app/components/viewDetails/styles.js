@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     alignItems: "stretch",
     justifyContent: "center",
     padding: "5%",
-    paddingBottom: "30%",
+    paddingBottom: "20%",
     flex: 1,
     width: "100%",
     borderRadius: 20,
@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     color: "#3d3496",
     fontWeight: "bold",
-    fontSize: 25,
+    fontSize: 20,
     padding: "5%",
     paddingBottom: 0,
   },
@@ -29,13 +29,13 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   allergenContainer: {
-    flex: 1,
+    flex: 0.5,
     alignItems: "flex-start",
   },
   flatlistContainer: {
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "center",
   },
   nutritionalContent: {
     backgroundColor: "#2ba7c7",

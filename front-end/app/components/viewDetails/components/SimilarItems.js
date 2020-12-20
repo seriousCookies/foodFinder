@@ -6,7 +6,7 @@ import { styles } from "../styles";
 import { SIMILARITEMS_QUERY } from "../../../api/queries/getSimiliarItems";
 import { NCItems } from "./NCItems";
 
-export const SimilarItems = ({ group }) => {
+export const SimilarItems = ({ group, currItem }) => {
   const { data, error, loading } = useQuery(SIMILARITEMS_QUERY, {
     variables: { search: group },
   });
@@ -18,14 +18,35 @@ export const SimilarItems = ({ group }) => {
   }
 
   if (data !== undefined) {
-    const results = data.getSimilarItems;
-    return results.slice(0, 5).map((el) => {
-      return (
-        <View style={styles.container}>
-          <Text>{el.title}</Text>
-          <NCItems nutritionalContent={el.nutritionalContent} />
-        </View>
-      );
-    });
+    let allergenfilter = ["egg"];
+    return (
+      [...data.getSimilarItems]
+        // .sort((a, b) => {
+        //   return a.nutritionalContent[0].amount - b.nutritionalContent[0].amount;
+        // })
+        .slice(0, 5)
+        .map((el) => {
+          if (currItem !== el.title + el.subtitle) {
+            return (
+              <View style={styles.container}>
+                <Text>
+                  {el.title} ({el.subtitle})
+                </Text>
+                <View style={styles.container}>
+                  <NCItems
+                    alternative={true}
+                    nutritionalContent={
+                      el.nutritionalContent.length > 1
+                        ? el.nutritionalContent
+                        : null
+                    }
+                  />
+                </View>
+              </View>
+            );
+          }
+          return;
+        })
+    );
   }
 };

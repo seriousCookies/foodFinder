@@ -28,6 +28,7 @@ const ViewDetails = ({ barcode }) => {
       nutritionalContent,
       allergen,
     } = data.getProduct;
+    const veganList = ["egg", "fisk", "melk", "skalldyr", "blotdyr"];
 
     return (
       <SafeAreaView style={styles.mainContainer}>
@@ -40,8 +41,11 @@ const ViewDetails = ({ barcode }) => {
         </View>
         <Text>Inneholder:</Text>
         <AllergenItems allergen={allergen} />
-        <Text>Similar alternatives:</Text>
-        <SimilarItems group={shoppingListGroupName1} />
+        <Text>Andre {shoppingListGroupName1}:</Text>
+        <SimilarItems
+          group={shoppingListGroupName1}
+          currItem={title + subtitle}
+        />
       </SafeAreaView>
     );
   } else {
