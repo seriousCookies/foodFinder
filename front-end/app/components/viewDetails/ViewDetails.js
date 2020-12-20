@@ -4,8 +4,9 @@ import AppLoading from "expo-app-loading";
 import { useQuery } from "@apollo/client";
 import { DATA_QUERY } from "../../api/queries/getproduct";
 import { styles } from "./styles";
-import { NCItem } from "./components/NCItem";
-import { AllergenItem } from "./components/AllergenItem";
+import { NCItems } from "./components/NCItems";
+import { SimilarItems } from "./components/SimilarItems";
+import { AllergenItems } from "./components/AllergenItems";
 
 const ViewDetails = ({ barcode }) => {
   const searchVar = barcode.barcode;
@@ -22,43 +23,25 @@ const ViewDetails = ({ barcode }) => {
     const {
       title,
       ingredients,
-      weight,
+      shoppingListGroupName1,
+      subtitle,
       nutritionalContent,
       allergen,
     } = data.getProduct;
 
-    const renderNCItem = ({ item }) => <NCItem item={item} />;
-    const renderAllergenItem = ({ item }) => <AllergenItem item={item} />;
     return (
       <SafeAreaView style={styles.mainContainer}>
         <View>
           <Text style={styles.title}>{title}</Text>
+          <Text style={styles.subtitle}>{subtitle}</Text>
         </View>
         <View style={styles.container}>
-          <FlatList
-            style={styles.flatlist}
-            contentContainerStyle={styles.flatlistContainer}
-            numColumns={5}
-            renderItem={({ item }) => renderItem({ item })}
-            data={nutritionalContent}
-            renderItem={renderNCItem}
-            keyExtractor={(item) => item.name}
-          />
+          <NCItems nutritionalContent={nutritionalContent} />
         </View>
-        <Text>Ingredients: {ingredients}</Text>
         <Text>Inneholder:</Text>
-        <View style={styles.allergenContainer}>
-          <FlatList
-            style={styles.flatlist}
-            contentContainerStyle={styles.flatlistContainer}
-            numColumns={5}
-            renderItem={({ allergenItem }) => renderItem({ allergenItem })}
-            data={allergen}
-            renderItem={renderAllergenItem}
-            keyExtractor={(item) => item.name}
-          />
-        </View>
-        <Text>Hello There</Text>
+        <AllergenItems allergen={allergen} />
+        <Text>Similar alternatives:</Text>
+        <SimilarItems group={shoppingListGroupName1} />
       </SafeAreaView>
     );
   } else {

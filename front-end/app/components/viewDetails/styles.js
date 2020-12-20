@@ -17,6 +17,11 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 25,
     padding: "5%",
+    paddingBottom: 0,
+  },
+  subtitle: {
+    textAlign: "center",
+    paddingBottom: "5%",
   },
   container: {
     flex: 1,

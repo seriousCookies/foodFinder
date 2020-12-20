@@ -1,13 +1,12 @@
 import { gql } from "@apollo/client";
 
-export const DATA_QUERY = gql`
-  query products($search: String) {
-    getProduct(search: $search) {
+export const SIMILARITEMS_QUERY = gql`
+  query getSimilarItems($search: String) {
+    getSimilarItems(search: $search) {
       title
       subtitle
+      ean
       shoppingListGroupName1
-      ingredients
-      weight
       nutritionalContent {
         displayName
         amount
