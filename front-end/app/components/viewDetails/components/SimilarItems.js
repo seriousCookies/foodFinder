@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import AppLoading from "expo-app-loading";
 import { useQuery } from "@apollo/client";
 import { styles } from "../styles";
@@ -27,10 +27,10 @@ export const SimilarItems = ({ group, currItem, GF, V }) => {
     }
     if (filteredData.length < 1) {
       return (
-        <>
+        <View>
           <Text style={styles.text}>No alternatives found</Text>
           <View style={styles.emptyContainer} />
-        </>
+        </View>
       );
     }
     return filteredData

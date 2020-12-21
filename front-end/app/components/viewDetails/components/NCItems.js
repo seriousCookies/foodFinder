@@ -1,5 +1,5 @@
-import React from "react";
-import { View, FlatList, Text } from "react-native";
+import React, { useState } from "react";
+import { View, FlatList, Text, TouchableOpacity } from "react-native";
 import { styles } from "../styles";
 import {
   rules,
@@ -8,6 +8,10 @@ import {
 } from "../utils/trafficColours";
 
 export const NCItems = ({ nutritionalContent, alternative }) => {
+  const [toggleNCView, setToggleNCView] = useState(false);
+  const onPress = () => {
+    setToggleNCView(!toggleNCView);
+  };
   if (nutritionalContent === null) {
     return <Text>No nutritional information provided</Text>;
   } else {
@@ -27,12 +31,16 @@ export const NCItems = ({ nutritionalContent, alternative }) => {
         if (alternative) {
           return (
             <View>
-              <View style={trafficColourStyle || styles.nutritionalContent}>
-                <Text style={styles.ncNameText}>{displayName}</Text>
-                <Text style={styles.text}>
-                  {displayName === "Energi" ? amount : itemLabel}
-                </Text>
-              </View>
+              <TouchableOpacity onPress={onPress}>
+                <View style={trafficColourStyle || styles.nutritionalContent}>
+                  <Text style={styles.ncNameText}>{displayName}</Text>
+                  <Text style={styles.text}>
+                    {displayName === "Energi" || toggleNCView
+                      ? amount
+                      : itemLabel}
+                  </Text>
+                </View>
+              </TouchableOpacity>
             </View>
           );
         }
