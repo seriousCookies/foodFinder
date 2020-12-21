@@ -1,5 +1,6 @@
-import React from "react";
-import { Text, View, SafeAreaView, FlatList, Dimensions } from "react-native";
+import React, { useState } from "react";
+import { Text, View, SafeAreaView } from "react-native";
+import CheckBox from "@react-native-community/checkbox";
 import AppLoading from "expo-app-loading";
 import { useQuery } from "@apollo/client";
 import { DATA_QUERY } from "../../api/queries/getproduct";
@@ -9,6 +10,8 @@ import { SimilarItems } from "./components/SimilarItems";
 import { AllergenItems } from "./components/AllergenItems";
 
 const ViewDetails = ({ barcode }) => {
+  const [isGlutenFri, setIsGlutenFri] = useState(false);
+  const [isVegan, setIsVegan] = useState(false);
   const searchVar = barcode.barcode;
   const { data, error, loading } = useQuery(DATA_QUERY, {
     variables: { search: searchVar },
@@ -28,7 +31,6 @@ const ViewDetails = ({ barcode }) => {
       nutritionalContent,
       allergen,
     } = data.getProduct;
-    const veganList = ["egg", "fisk", "melk", "skalldyr", "blotdyr"];
 
     return (
       <SafeAreaView style={styles.mainContainer}>
@@ -43,7 +45,23 @@ const ViewDetails = ({ barcode }) => {
           <AllergenItems allergen={allergen} />
         </View>
         <Text>Andre {shoppingListGroupName1}:</Text>
+        <View style={styles.filterContainer}>
+          <CheckBox
+            value={isGlutenFri}
+            onValueChange={setIsGlutenFri}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>glutenfri</Text>
+          <CheckBox
+            value={isVegan}
+            onValueChange={setIsVegan}
+            style={styles.checkbox}
+          />
+          <Text style={styles.label}>Vegan</Text>
+        </View>
         <SimilarItems
+          GF={isGlutenFri}
+          V={isVegan}
           group={shoppingListGroupName1}
           currItem={title + subtitle}
         />

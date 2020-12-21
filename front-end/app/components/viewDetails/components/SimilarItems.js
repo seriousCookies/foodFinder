@@ -5,8 +5,9 @@ import { useQuery } from "@apollo/client";
 import { styles } from "../styles";
 import { SIMILARITEMS_QUERY } from "../../../api/queries/getSimiliarItems";
 import { NCItems } from "./NCItems";
+import { veganList, GFList, useFilter } from "./filter";
 
-export const SimilarItems = ({ group, currItem }) => {
+export const SimilarItems = ({ group, currItem, GF, V }) => {
   const { data, error, loading } = useQuery(SIMILARITEMS_QUERY, {
     variables: { search: group },
   });
@@ -16,36 +17,48 @@ export const SimilarItems = ({ group, currItem }) => {
   if (error) {
     return <Text>No alternatives found</Text>;
   }
-
   if (data !== undefined) {
-    return (
-      [...data.getSimilarItems]
-        // .sort((a, b) => {
-        //   return a.nutritionalContent[0].amount - b.nutritionalContent[0].amount;
-        // })
-        .slice(0, 5)
-        .map((el) => {
-          if (currItem !== el.title + el.subtitle) {
-            return (
+    let filteredData = [...data.getSimilarItems];
+    if (V) {
+      filteredData = useFilter(veganList, filteredData);
+    }
+    if (GF) {
+      filteredData = useFilter(GFList, filteredData);
+    }
+    if (filteredData.length < 1) {
+      return (
+        <>
+          <Text style={styles.text}>No alternatives found</Text>
+          <View style={styles.emptyContainer} />
+        </>
+      );
+    }
+    return filteredData
+      .sort((a, b) => {
+        return a.nutritionalContent[0].amount - b.nutritionalContent[0].amount;
+      })
+      .slice(0, 4)
+      .map((el) => {
+        if (currItem !== el.title + el.subtitle) {
+          return (
+            <View style={styles.container}>
+              <Text style={styles.subtitle}>
+                {el.title} ({el.subtitle})
+              </Text>
               <View style={styles.container}>
-                <Text style={styles.label}>
-                  {el.title} ({el.subtitle})
-                </Text>
-                <View style={styles.container}>
-                  <NCItems
-                    alternative={true}
-                    nutritionalContent={
-                      el.nutritionalContent.length > 1
-                        ? el.nutritionalContent
-                        : null
-                    }
-                  />
-                </View>
+                <NCItems
+                  alternative={true}
+                  nutritionalContent={
+                    el.nutritionalContent.length > 1
+                      ? el.nutritionalContent
+                      : null
+                  }
+                />
               </View>
-            );
-          }
-          return;
-        })
-    );
+            </View>
+          );
+        }
+        return;
+      });
   }
 };

@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
   subtitle: {
     textAlign: "center",
     color: "#4d6f94",
-    paddingBottom: "5%",
   },
   label: {
     textAlign: "center",
@@ -41,6 +40,15 @@ export const styles = StyleSheet.create({
   alContainer: {
     flex: 0.5,
     justifyContent: "center",
+  },
+  filterContainer: {
+    flex: 0.5,
+    alignItems: "baseline",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
+  emptyContainer: {
+    flex: 4,
   },
   allergenContainer: {
     flex: 1,
