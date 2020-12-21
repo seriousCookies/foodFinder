@@ -36,11 +36,12 @@ const ViewDetails = ({ barcode }) => {
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.subtitle}>{subtitle}</Text>
         </View>
-        <View style={styles.container}>
+        <View style={styles.NCContainer}>
           <NCItems nutritionalContent={nutritionalContent} />
         </View>
-        <Text>Inneholder:</Text>
-        <AllergenItems allergen={allergen} />
+        <View style={styles.alContainer}>
+          <AllergenItems allergen={allergen} />
+        </View>
         <Text>Andre {shoppingListGroupName1}:</Text>
         <SimilarItems
           group={shoppingListGroupName1}

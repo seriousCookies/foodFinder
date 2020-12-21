@@ -44,12 +44,14 @@ export const BarcodeScreen = () => {
     case CameraPermissionGranted === true:
       return (
         <View style={styles.mainContainer}>
-          <Text style={styles.infoText}> Start scanning! </Text>
           {modalVisible !== true ? (
-            <BarCodeScanner
-              onBarCodeScanned={barCodeScanned}
-              style={styles.scannerView}
-            ></BarCodeScanner>
+            <View>
+              <Text style={styles.infoText}> Start scanning! </Text>
+              <BarCodeScanner
+                onBarCodeScanned={barCodeScanned}
+                style={styles.scannerView}
+              ></BarCodeScanner>
+            </View>
           ) : null}
 
           <View style={styles.centeredView}>

@@ -55,7 +55,6 @@ export const NCItems = ({ nutritionalContent, alternative }) => {
     return (
       <View style={styles.container}>
         <FlatList
-          style={styles.flatlist}
           scrollEnabled={false}
           contentContainerStyle={styles.flatlistContainer}
           numColumns={5}

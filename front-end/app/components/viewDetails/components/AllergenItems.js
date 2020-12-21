@@ -1,34 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, FlatList, Text } from "react-native";
 import { styles } from "../styles";
 
+const AllergenItem = ({ item }) => {
+  const { displayName, code } = item;
+  if (code === "JA") {
+    return (
+      <View>
+        <Text style={styles.allergentext}>{displayName}</Text>
+      </View>
+    );
+  } else if (code === "KAN") {
+    return (
+      <View>
+        <Text style={styles.kanAllergenText}>{displayName}</Text>
+      </View>
+    );
+  }
+  return null;
+};
+
 export const AllergenItems = ({ allergen }) => {
   const renderAllergenItem = ({ item }) => <AllergenItem item={item} />;
-  const AllergenItem = ({ item }) => {
-    const { displayName, code } = item;
-    const vegan = ["egg", "fisk", "melk", "skalldyr", "blotdyr"];
-    if (code === "JA") {
-      return (
-        <View>
-          <Text style={styles.allergentext}>{displayName}</Text>
-        </View>
-      );
-    }
-    if (vegan.every(() => displayName) && code === "FRI") {
-      return (
-        <View>
-          <Text style={styles.allergentext}>VEGAN</Text>
-        </View>
-      );
-    }
-    return null;
-  };
-
   return (
     <View style={styles.allergenContainer}>
+      <Text>Inneholder: </Text>
       <FlatList
-        style={styles.flatlist}
-        contentContainerStyle={styles.flatlistContainer}
+        contentContainerStyle={styles.allergenFlatlistContainer}
         numColumns={5}
         renderItem={({ allergenItem }) => renderItem({ allergenItem })}
         data={allergen}

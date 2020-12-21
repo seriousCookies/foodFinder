@@ -18,7 +18,6 @@ export const SimilarItems = ({ group, currItem }) => {
   }
 
   if (data !== undefined) {
-    let allergenfilter = ["egg"];
     return (
       [...data.getSimilarItems]
         // .sort((a, b) => {
@@ -29,7 +28,7 @@ export const SimilarItems = ({ group, currItem }) => {
           if (currItem !== el.title + el.subtitle) {
             return (
               <View style={styles.container}>
-                <Text>
+                <Text style={styles.label}>
                   {el.title} ({el.subtitle})
                 </Text>
                 <View style={styles.container}>

@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: "rgba(255,255,255,0.2)",
+    backgroundColor: "rgba(255,255,255,0.1)",
     alignItems: "stretch",
     justifyContent: "center",
     padding: "5%",
@@ -21,16 +21,38 @@ export const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: "center",
+    color: "#4d6f94",
     paddingBottom: "5%",
+  },
+  label: {
+    textAlign: "center",
+    color: "#4d6f94",
   },
   container: {
     flex: 1,
-    alignItems: "stretch",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  NCContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  alContainer: {
+    flex: 0.5,
     justifyContent: "center",
   },
   allergenContainer: {
-    flex: 0.5,
+    flex: 1,
+    alignItems: "baseline",
+    flexDirection: "row",
+    justifyContent: "flex-start",
+  },
+  allergenFlatlistContainer: {
     alignItems: "flex-start",
+    flex: 0.75,
+    flexDirection: "row",
+    justifyContent: "flex-start",
   },
   flatlistContainer: {
     flexDirection: "row",
@@ -38,7 +60,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
   },
   nutritionalContent: {
-    backgroundColor: "#2ba7c7",
+    backgroundColor: "#0ebadb",
     borderRadius: 5,
     padding: 6,
     margin: 3,
@@ -74,9 +96,15 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   allergentext: {
-    backgroundColor: "#abedac",
+    backgroundColor: "#56b4b5",
     borderRadius: 5,
-    padding: 5,
+    padding: 1,
+    margin: 3,
+  },
+  kanAllergenText: {
+    backgroundColor: "#eeaa7a",
+    borderRadius: 5,
+    padding: 1,
     margin: 3,
   },
 });
