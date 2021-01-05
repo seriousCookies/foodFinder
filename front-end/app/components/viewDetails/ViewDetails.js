@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Text, View, SafeAreaView } from "react-native";
-import CheckBox from "@react-native-community/checkbox";
+import CheckBox from "expo-checkbox";
 import AppLoading from "expo-app-loading";
 import { useQuery } from "@apollo/client";
 import { DATA_QUERY } from "../../api/queries/getproduct";

@@ -1,4 +1,5 @@
+const { REACT_APP_GRAPHQL_URI } = process.env;
 const config = {
-  api: "http://192.168.0.97:3000/graphql",
+  api: "/graphql",
 };
 export default config;
