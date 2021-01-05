@@ -13,10 +13,11 @@ const client = new MongoClient(url, {
 });
 client.connect(async (err) => {
   if (err) {
-    console.log("couldn't connect here");
+    console.log(err, "couldn't connect to MongoDB here");
+  } else {
+    db = client.db("FoodDatabase");
+    console.log("MONGOdb connected");
   }
-  db = client.db("FoodDatabase");
-  console.log("MONGOdb connected");
 });
 
 const app = express();
