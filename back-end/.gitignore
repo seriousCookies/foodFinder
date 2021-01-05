@@ -1,3 +1,5 @@
-node_modules
-.env
 .idea
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
