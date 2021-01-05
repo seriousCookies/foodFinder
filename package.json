@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec \"node -r dotenv/config\"",
+    "build": "cd front-end && yarn start",
     "start": "node src/index.js"
   },
   "author": "",
