@@ -27,11 +27,17 @@ const ViewDetails = ({ barcode }) => {
       title,
       ingredients,
       shoppingListGroupName1,
+      shoppingListGroupName,
       subtitle,
       nutritionalContent,
       allergen,
     } = data.getProduct;
-
+    let allergenCounter = 0;
+    allergen.map((el) => {
+      el.code === "KAN" || el.code === "JA"
+        ? allergenCounter++
+        : allergenCounter;
+    });
     return (
       <SafeAreaView style={styles.mainContainer}>
         <View>
@@ -42,10 +48,22 @@ const ViewDetails = ({ barcode }) => {
           <NCItems nutritionalContent={nutritionalContent} />
         </View>
         <View style={styles.alContainer}>
-          <AllergenItems allergen={allergen} />
+          {allergenCounter > 0 ? (
+            <AllergenItems allergen={allergen} />
+          ) : (
+            <Text style={styles.italicsSubtitle}>No declared Allergens</Text>
+          )}
         </View>
-        <Text>Andre {shoppingListGroupName1}:</Text>
         <View style={styles.filterContainer}>
+          <View style={styles.similarItemHeadingContainer}>
+            <Text>
+              Andre{" "}
+              {shoppingListGroupName1
+                ? shoppingListGroupName1
+                : shoppingListGroupName}
+              :
+            </Text>
+          </View>
           <CheckBox
             value={isGlutenFri}
             onValueChange={setIsGlutenFri}
@@ -59,12 +77,18 @@ const ViewDetails = ({ barcode }) => {
           />
           <Text style={styles.label}>Vegan</Text>
         </View>
-        <SimilarItems
-          GF={isGlutenFri}
-          V={isVegan}
-          group={shoppingListGroupName1}
-          currItem={title + subtitle}
-        />
+        <View style={styles.SIContainer}>
+          <SimilarItems
+            GF={isGlutenFri}
+            V={isVegan}
+            group={
+              shoppingListGroupName1
+                ? shoppingListGroupName1
+                : shoppingListGroupName
+            }
+            currItem={title + subtitle}
+          />
+        </View>
       </SafeAreaView>
     );
   } else {

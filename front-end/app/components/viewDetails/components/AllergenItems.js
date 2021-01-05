@@ -24,7 +24,12 @@ export const AllergenItems = ({ allergen }) => {
   const renderAllergenItem = ({ item }) => <AllergenItem item={item} />;
   return (
     <View style={styles.allergenContainer}>
-      <Text>Inneholder: </Text>
+      <View style={styles.allergenTitleContainer}>
+        <View style={styles.circleJa} />
+        <Text> Inneholde </Text>
+        <View style={styles.circleKan} />
+        <Text> Kan inneholde</Text>
+      </View>
       <FlatList
         contentContainerStyle={styles.allergenFlatlistContainer}
         numColumns={5}

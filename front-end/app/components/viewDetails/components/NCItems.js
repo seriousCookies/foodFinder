@@ -36,7 +36,7 @@ export const NCItems = ({ nutritionalContent, alternative }) => {
                   <Text style={styles.ncNameText}>{displayName}</Text>
                   <Text style={styles.text}>
                     {displayName === "Energi" || toggleNCView
-                      ? amount
+                      ? amount + unit
                       : itemLabel}
                   </Text>
                 </View>

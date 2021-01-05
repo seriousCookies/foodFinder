@@ -21,6 +21,12 @@ export const styles = StyleSheet.create({
   },
   subtitle: {
     textAlign: "center",
+    fontSize: 12,
+    color: "#4d6f94",
+  },
+  italicsSubtitle: {
+    fontStyle: "italic",
+    textAlign: "left",
     color: "#4d6f94",
   },
   label: {
@@ -30,41 +36,62 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
+  },
+  similarItemContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "flex-start",
+  },
+  SIContainer: {
+    flex: 8,
+    alignItems: "center",
+    justifyContent: "flex-start",
   },
   NCContainer: {
-    flex: 1,
+    flex: 2,
     alignItems: "center",
     justifyContent: "center",
   },
   alContainer: {
-    flex: 0.5,
+    flex: 0.75,
     justifyContent: "center",
   },
   filterContainer: {
-    flex: 0.5,
-    alignItems: "baseline",
+    flex: 0.75,
+    alignItems: "center",
     flexDirection: "row",
     justifyContent: "flex-start",
+    paddingBottom: 5,
   },
   emptyContainer: {
     flex: 4,
   },
+  similarItemHeadingContainer: {
+    marginRight: 2,
+  },
+
   allergenContainer: {
-    flex: 1,
     alignItems: "baseline",
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "flex-start",
   },
+  allergenTitleContainer: {
+    flex: 2,
+    alignItems: "baseline",
+    flexDirection: "row",
+    justifyContent: "center",
+    paddingBottom: 15,
+  },
   allergenFlatlistContainer: {
+    flex: 2,
     alignItems: "flex-start",
-    flex: 0.75,
     flexDirection: "row",
     justifyContent: "flex-start",
   },
   flatlistContainer: {
     flexDirection: "row",
-    alignItems: "center",
+    alignItems: "flex-start",
     justifyContent: "center",
   },
   nutritionalContent: {
@@ -75,20 +102,21 @@ export const styles = StyleSheet.create({
   },
   trafficColourRed: {
     backgroundColor: "#d84f34",
+    flexGrow: 1,
     borderRadius: 5,
-    padding: 6,
+    padding: 5,
     margin: 3,
   },
   trafficColourYellow: {
     backgroundColor: "#e5edab",
     borderRadius: 5,
-    padding: 6,
+    padding: 5,
     margin: 3,
   },
   trafficColourGreen: {
     backgroundColor: "#abedac",
     borderRadius: 5,
-    padding: 6,
+    padding: 5,
     margin: 3,
   },
   text: {
@@ -114,5 +142,19 @@ export const styles = StyleSheet.create({
     borderRadius: 5,
     padding: 1,
     margin: 3,
+  },
+  circleJa: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: "#56b4b5",
+    alignSelf: "center",
+  },
+  circleKan: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: "#eeaa7a",
+    alignSelf: "center",
   },
 });

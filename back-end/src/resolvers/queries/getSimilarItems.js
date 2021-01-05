@@ -1,11 +1,21 @@
 const getSimilarItems = async (parent, args, context, info) => {
-  const res = await db
+  let res;
+  res = await db
     .collection("Parsed-Meny")
     .find({ shoppingListGroupName1: args.search })
     .toArray()
     .then((res) => {
       return res;
     });
+  if (res.length < 1) {
+    res = await db
+      .collection("Parsed-Meny")
+      .find({ shoppingListGroupName: args.search })
+      .toArray()
+      .then((res) => {
+        return res;
+      });
+  }
   let result = [];
   res.forEach((element) =>
     result.push({

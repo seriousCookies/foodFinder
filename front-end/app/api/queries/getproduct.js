@@ -5,6 +5,7 @@ export const DATA_QUERY = gql`
     getProduct(search: $search) {
       title
       subtitle
+      shoppingListGroupName
       shoppingListGroupName1
       ingredients
       weight
