@@ -1,24 +1,21 @@
 {
-  "name": "mongo-db",
+  "name": "foodfinder",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js --exec \"node -r dotenv/config\"",
-    "build": "cd front-end && yarn start",
-    "start": "node src/index.js"
+    "start": "node index.js",
+    "build": "cd front-end && yarn && yarn build && cd ../back-end && npm install"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seriousCookies/foodFinder.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "apollo-server-express": "^2.19.0",
-    "body-parser": "^1.19.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "graphql": "^15.4.0",
-    "graphql-tools": "^7.0.2",
-    "mongodb": "^3.6.3",
-    "mongoose": "^5.11.5",
-    "nodemon": "^2.0.6"
-  }
+  "bugs": {
+    "url": "https://github.com/seriousCookies/foodFinder/issues"
+  },
+  "homepage": "https://github.com/seriousCookies/foodFinder#readme"
 }
