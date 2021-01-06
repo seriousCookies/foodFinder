@@ -1,5 +1,4 @@
-const { REACT_APP_GRAPHQL_URI } = process.env;
 const config = {
-  api: "/graphql",
+  api: "https://menybackend.herokuapp.com/graphql",
 };
 export default config;
