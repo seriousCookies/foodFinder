@@ -46,7 +46,7 @@ export const BarcodeScreen = () => {
         <View style={styles.mainContainer}>
           {modalVisible !== true ? (
             <View>
-              <Text style={styles.infoText}> Start scanning! </Text>
+              <Text style={styles.infoText}> Skann en ny vare </Text>
               <BarCodeScanner
                 onBarCodeScanned={barCodeScanned}
                 style={styles.scannerView}

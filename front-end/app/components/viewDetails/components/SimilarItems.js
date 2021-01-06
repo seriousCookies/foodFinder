@@ -16,7 +16,7 @@ export const SimilarItems = ({ group, currItem, GF, V }) => {
       return <AppLoading />;
     }
     if (error) {
-      return <Text>No alternatives found</Text>;
+      return <Text>Fant ingen alternativer</Text>;
     }
     if (data !== undefined) {
       let filteredData = [...data.getSimilarItems];
@@ -30,7 +30,7 @@ export const SimilarItems = ({ group, currItem, GF, V }) => {
         return (
           <View style={styles.emptyContainer}>
             <View>
-              <Text style={styles.text}>No alternatives found</Text>
+              <Text style={styles.text}>Fant ingen alternativer</Text>
             </View>
           </View>
         );
@@ -78,7 +78,7 @@ export const SimilarItems = ({ group, currItem, GF, V }) => {
     return (
       <View style={styles.emptyContainer}>
         <View>
-          <Text style={styles.text}>No other alternatives found</Text>
+          <Text style={styles.text}>Fant ikke flere alternativer</Text>
         </View>
       </View>
     );

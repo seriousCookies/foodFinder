@@ -20,7 +20,7 @@ const ViewDetails = ({ barcode }) => {
     return <AppLoading />;
   }
   if (error) {
-    return <Text>This item is not found</Text>;
+    return <Text></Text>;
   }
   if (data !== undefined) {
     const {
@@ -92,7 +92,7 @@ const ViewDetails = ({ barcode }) => {
       </SafeAreaView>
     );
   } else {
-    return <Text>This item is not found</Text>;
+    return <Text>Fant ikke varen du søkte etter</Text>;
   }
 };
 
