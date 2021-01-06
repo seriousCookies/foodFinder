@@ -20,7 +20,11 @@ const ViewDetails = ({ barcode }) => {
     return <AppLoading />;
   }
   if (error) {
-    return <Text></Text>;
+    return (
+      <SafeAreaView style={styles.mainContainer}>
+        <Text style={styles.label}>Fant ikke varen du søkte etter</Text>
+      </SafeAreaView>
+    );
   }
   if (data !== undefined) {
     const {
@@ -51,7 +55,7 @@ const ViewDetails = ({ barcode }) => {
           {allergenCounter > 0 ? (
             <AllergenItems allergen={allergen} />
           ) : (
-            <Text style={styles.italicsSubtitle}>No declared Allergens</Text>
+            <Text style={styles.italicsSubtitle}>Ingen allergier oppgitt</Text>
           )}
         </View>
         <View style={styles.filterContainer}>
@@ -92,7 +96,11 @@ const ViewDetails = ({ barcode }) => {
       </SafeAreaView>
     );
   } else {
-    return <Text>Fant ikke varen du søkte etter</Text>;
+    return (
+      <SafeAreaView style={styles.mainContainer}>
+        <Text>Fant ikke varen du søkte etter</Text>
+      </SafeAreaView>
+    );
   }
 };
 

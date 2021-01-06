@@ -13,7 +13,7 @@ export const NCItems = ({ nutritionalContent, alternative }) => {
     setToggleNCView(!toggleNCView);
   };
   if (nutritionalContent === null) {
-    return <Text>No nutritional information provided</Text>;
+    return <Text>Næringsinnhold ikke oppgitt</Text>;
   } else {
     const NCItem = ({ item }) => {
       const { displayName, amount, unit } = item;
