@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "cd front-end && yarn && yarn build && cd ../back-end && npm install"
+    "build": "cd front-end && yarn && yarn add expo-cli -g && yarn start",
+    "heroku-postbuild": "cd front-end && yarn && yarn start"
   },
   "repository": {
     "type": "git",

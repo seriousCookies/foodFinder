@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "DoneWithIt",
-    "slug": "DoneWithIt",
+    "name": "meny-food-scanner",
+    "slug": "meny-food-scanner",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./app/assets/scannerIcon.png",
@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./app/assets/scannerIcon.png"
-    }
+    },
+    "description": "Scan food items from Meny and see the nutritional content and alternative options",
+    "githubUrl": "https://github.com/seriousCookies/foodFinder"
   }
 }
