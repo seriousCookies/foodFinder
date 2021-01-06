@@ -18,13 +18,13 @@ Hobby project- web scrapping Meny.no for data on all their listed food items, co
 
 ### Built With
 
-Front-end
+ <h3 align="center">Frontend</h3>
 <br />
 
 - <a href="https://reactnative.dev/" target="_blank"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/> </a>[react native](www.reactnative.com)
-  <br />
-  Back-end
-  <br />
+<br />
+<h3 align="center">Backend</h3>
+ <br />
 - <a href="https://nodejs.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a>[node.js](https://nodejs.org)
 - <a href="https://www.mongodb.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/></a>[mongodb](https://www.mongodb.com/)
 - <a href="https://graphql.org" target="_blank"> <img src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg" alt="graphql" width="40" height="40"/></a>[graphql](https://graphql.org)
