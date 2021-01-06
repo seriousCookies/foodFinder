@@ -38,7 +38,7 @@ export const BarcodeScreen = () => {
     case CameraPermissionGranted === false:
       return (
         <View style={styles.container}>
-          <Text>Camera Permission Denied.</Text>
+          <Text>Kameratillatelse mangler</Text>
         </View>
       );
     case CameraPermissionGranted === true:
@@ -73,7 +73,7 @@ export const BarcodeScreen = () => {
                       setModalVisible(!modalVisible);
                     }}
                   >
-                    <Text style={styles.textStyle}>Scan another item</Text>
+                    <Text style={styles.textStyle}>Skann en ny vare</Text>
                   </TouchableHighlight>
                 </View>
               </View>
@@ -84,7 +84,7 @@ export const BarcodeScreen = () => {
     default:
       return (
         <View style={styles.container}>
-          <Text>Please grant Camera permission</Text>
+          <Text>Gi appen tilgang til kameraet</Text>
         </View>
       );
   }
