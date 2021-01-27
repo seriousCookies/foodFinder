@@ -5,9 +5,10 @@
   </a>
   <h3 align="center">Meny food scanner</h3>
   <p align="center">
-Scan food items from Meny and see the nutritional content and alternative options 
-    <img src="front-end\app\assets\expo-QR-code.png" alt="expo-QR-code">
+  Scan food items from Meny and see the nutritional content and alternative options 
+  (on first scan- it takes roughly 20 seconds for Heroku to load before item is displayed)
   </p>
+  <img src="front-end\app\assets\expo-QR-code.png" alt="expo-QR-code">
 </p>
 
 <!-- ABOUT THE PROJECT -->
