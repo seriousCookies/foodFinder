@@ -7,7 +7,7 @@
   <p align="center">
   Scan food items from Meny and see the nutritional content and alternative options 
   </p>
-  <img align="center" src="front-end\app\assets\expo-QR-code.png" alt="expo-QR-code">
+  <p align="center"><img src="front-end\app\assets\expo-QR-code.png" alt="expo-QR-code"></p>
   <p align="center">
   (on first scan- it takes roughly 20 seconds for Heroku to load before item is displayed)
   </p>
