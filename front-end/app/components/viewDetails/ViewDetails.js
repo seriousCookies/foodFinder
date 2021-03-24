@@ -17,7 +17,11 @@ const ViewDetails = ({ barcode }) => {
     variables: { search: searchVar },
   });
   if (loading) {
-    return <AppLoading />;
+    return (
+      <SafeAreaView style={styles.mainContainer}>
+        <Text style={styles.label}>Vennligst vent</Text>
+      </SafeAreaView>
+    );
   }
   if (error) {
     return (
