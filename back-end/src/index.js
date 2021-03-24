@@ -15,7 +15,7 @@ client.connect(async (err) => {
     console.log(err, "Couldn't connect to MongoDB here");
   } else {
     db = client.db(`${process.env.DB_DATABASE}`);
-    console.log("MONGOdb connected");
+    console.log("MONGOdb connected 🍒");
   }
 });
 
