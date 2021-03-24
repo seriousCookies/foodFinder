@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Text, View, SafeAreaView } from "react-native";
+import { ActivityIndicator, Text, View, SafeAreaView } from "react-native";
 import CheckBox from "expo-checkbox";
-import AppLoading from "expo-app-loading";
 import { useQuery } from "@apollo/client";
 import { DATA_QUERY } from "../../api/queries/getproduct";
 import { styles } from "./styles";
@@ -19,18 +18,20 @@ const ViewDetails = ({ barcode }) => {
   if (loading) {
     return (
       <SafeAreaView style={styles.mainContainer}>
-        <Text style={styles.label}>Vennligst vent</Text>
+        <ActivityIndicator size="large" color="#3d3496" />
       </SafeAreaView>
     );
   }
   if (error) {
+    console.log(error);
     return (
       <SafeAreaView style={styles.mainContainer}>
-        <Text style={styles.label}>Fant ikke varen du søkte etter</Text>
+        <Text style={styles.label}>Error: Fant ikke varen du søkte etter</Text>
       </SafeAreaView>
     );
   }
   if (data !== undefined) {
+    console.log(data, "here");
     const {
       title,
       ingredients,
