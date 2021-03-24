@@ -12,7 +12,7 @@ const client = new MongoClient(url, {
 });
 client.connect(async (err) => {
   if (err) {
-    console.log(err, "couldn't connect to MongoDB here");
+    console.log(err, "Couldn't connect to MongoDB here");
   } else {
     db = client.db(`${process.env.DB_DATABASE}`);
     console.log("MONGOdb connected");
