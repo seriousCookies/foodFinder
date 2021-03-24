@@ -31,7 +31,7 @@ Food Finder has been a concept that I have wanted to do for a long time, combini
 <th align="center"><a href="https://nodejs.org" title="NodeJS" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="50" height="50"/><br/>NodeJS</a></th>
 <th align="center"><a href="https://www.mongodb.com/" title="MongoDB" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="50" height="50"/><br/>MongoDB</a></th>
 <th align="center"><a href="https://graphql.org" target="_blank"> <img src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg" alt="graphql" width="50" height="50"/><br/>GraphQL</a></th>
-<th align="center"><a href="https://www.apollographql.com/" title="Apollo" target="_blank"><img src="https://www.vectorlogo.zone/logos/apollographql/apollographql-icon.svg" alt="apollo" width="40" height="40"/><br/>Apollo</a></th>
+<th align="center"><a href="https://www.apollographql.com/" title="Apollo" target="_blank"><img src="https://www.vectorlogo.zone/logos/apollographql/apollographql-icon.svg" alt="apollo" width="50" height="50"/><br/>Apollo</a></th>
 <th align="center"><a href="https://heroku.com"  title="Heroku" target="_blank"><img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="50" height="50"/><br/>Heroku</a></th>
 
 </tr>
