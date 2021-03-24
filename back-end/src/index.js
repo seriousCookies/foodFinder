@@ -1,12 +1,11 @@
 const { ApolloServer } = require("apollo-server-express");
 const express = require("express");
-const connectDb = require("./config/db");
 const typeDefs = require("./types");
 const resolvers = require("./resolvers");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const MongoClient = require("mongodb").MongoClient;
-const url = process.env.DATABASE_URL;
+const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.zdljk.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
 const client = new MongoClient(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -15,7 +14,7 @@ client.connect(async (err) => {
   if (err) {
     console.log(err, "couldn't connect to MongoDB here");
   } else {
-    db = client.db("FoodDatabase");
+    db = client.db(`${process.env.DB_DATABASE}`);
     console.log("MONGOdb connected");
   }
 });
