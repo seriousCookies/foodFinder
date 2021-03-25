@@ -15,7 +15,7 @@ client.connect(async (err) => {
     console.log(err, "Couldn't connect to MongoDB here");
   } else {
     db = client.db(`${process.env.DB_DATABASE}`);
-    console.log("MONGOdb connected 🍒");
+    console.log(`MONGOdb connected 🍒`);
   }
 });
 
@@ -29,4 +29,7 @@ const server = new ApolloServer({
 });
 
 server.applyMiddleware({ app });
+app.listen(process.env.PORT, () =>
+  console.log(`🍍 Server ready at http://localhost:3000/graphql`)
+);
 module.exports.app = app;
