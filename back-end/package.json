@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec \"node -r dotenv/config\"",
-    "start": "yarn add && node src/index.js"
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "ISC",
