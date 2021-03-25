@@ -37,7 +37,7 @@ const App = () => {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: "blue",
+    backgroundColor: "#f09",
     opacity: 0.6,
     alignItems: "center",
     justifyContent: "center",

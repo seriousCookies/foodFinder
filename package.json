@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "cd back-end && yarn && cd .. && node index.js",
-    "build": "cd front-end && yarn && yarn add expo-cli -g && yarn start",
+    "build": "cd front-end && yarn && yarn add expo-cli -g && yarn start-minify",
     "heroku-postbuild": "cd front-end && yarn && yarn start"
   },
   "repository": {
