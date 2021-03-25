@@ -24,7 +24,6 @@ const ViewDetails = ({ barcode }) => {
     );
   }
   if (error) {
-    console.log(error);
     return (
       <SafeAreaView style={styles.mainContainer}>
         <Text style={styles.label}>Error: Fant ikke varen du søkte etter</Text>
