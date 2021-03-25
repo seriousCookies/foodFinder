@@ -9,8 +9,8 @@
   },
   "scripts": {
     "start": "cd back-end && yarn && cd .. && node index.js",
-    "build": "cd front-end && yarn && yarn add expo-cli -g && yarn build",
-    "heroku-postbuild": "cd front-end && yarn && yarn build"
+    "build": "cd front-end && yarn && yarn add expo-cli -g && yarn start",
+    "heroku-postbuild": "cd front-end && yarn && yarn start"
   },
   "repository": {
     "type": "git",
