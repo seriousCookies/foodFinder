@@ -15,6 +15,7 @@ const ViewDetails = ({ barcode }) => {
   const { data, error, loading } = useQuery(DATA_QUERY, {
     variables: { search: searchVar },
   });
+
   if (loading) {
     return (
       <SafeAreaView style={styles.mainContainer}>
@@ -31,7 +32,6 @@ const ViewDetails = ({ barcode }) => {
     );
   }
   if (data !== undefined) {
-    console.log(data, "here");
     const {
       title,
       ingredients,

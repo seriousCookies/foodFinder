@@ -13,9 +13,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -29,6 +27,9 @@
       "favicon": "./app/assets/scannerIcon.png"
     },
     "description": "Scan food items from Meny and see the nutritional content and alternative options",
-    "githubUrl": "https://github.com/seriousCookies/foodFinder"
+    "githubUrl": "https://github.com/seriousCookies/foodFinder",
+    "env": {
+      "EXPO_API": "https://menybackend.herokuapp.com/graphql"
+    }
   }
 }
