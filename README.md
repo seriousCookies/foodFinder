@@ -3,7 +3,7 @@
   <a href="https://github.com/github_username/repo_name">
     <img src="front-end\app\assets\scannerIcon.png" alt="Logo" width="80" height="80">
   </a>
-  <h2 align="center">Meny food scanner</h2>
+  <h2 align="center">Meny Food Finder</h2>
   <p align="center">
   Scan food items from <a href="https://meny.no">meny.no</a> and see the nutritional content and alternative options 
   </p>
