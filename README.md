@@ -5,7 +5,7 @@
   </a>
   <h2 align="center">Meny food scanner</h2>
   <p align="center">
-  Scan food items from Meny and see the nutritional content and alternative options 
+  Scan food items from <a href="https://meny.no">meny.no</a> and see the nutritional content and alternative options 
   </p>
   <p align="center"><img src="front-end\app\assets\expo-QR-code.png" alt="expo-QR-code"></p>
   <p align="center">
