@@ -5,7 +5,8 @@ const resolvers = require("./resolvers");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const MongoClient = require("mongodb").MongoClient;
-const url = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.zdljk.mongodb.net/${process.env.DB_DATABASE}?retryWrites=true&w=majority`;
+const url = process.env.DATABASE_URL;
+
 const client = new MongoClient(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
