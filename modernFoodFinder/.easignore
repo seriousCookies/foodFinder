@@ -1,0 +1,44 @@
+# Node modules and lock files
+node_modules/
+yarn.lock
+package-lock.json
+npm-debug.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.*
+
+# Build output
+build/
+dist/
+.expo/
+.expo-shared/
+web-build/
+
+# Misc
+*.log
+.idea/
+.vscode/
+coverage/
+
+# Expo/EAS
+*.tar.gz
+*.apk
+*.aab
+*.ipa
+
+# Ignore local config
+local.properties
+
+# Ignore test output
+*.test.js
+*.spec.js
+*.test.ts
+*.spec.ts
+
+# Ignore macOS system files
+*.DS_Store
