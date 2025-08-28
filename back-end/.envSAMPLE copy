@@ -1,3 +1,0 @@
-DATABASE_URL =
-  "mongodb+srv://<username>:<password>@<cluster>.<clusterId>.mongodb.net/?retryWrites=true";
-PORT = 3000;
