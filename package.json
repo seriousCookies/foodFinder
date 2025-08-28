@@ -1,0 +1,26 @@
+{
+  "name": "foodfinder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "14.x",
+    "yarn": "1.x"
+  },
+  "scripts": {
+    "start": "cd back-end && yarn && cd .. && node index.js",
+    "build": "cd front-end && yarn && yarn add expo-cli -g && yarn start-minify",
+    "heroku-postbuild": "cd front-end && yarn && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seriousCookies/foodFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seriousCookies/foodFinder/issues"
+  },
+  "homepage": "https://github.com/seriousCookies/foodFinder#readme"
+}
